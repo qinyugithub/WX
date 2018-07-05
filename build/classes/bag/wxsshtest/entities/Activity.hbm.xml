@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="bag.wxsshtest.entities.Activity" table="ACTIVITY" dynamic-update="true" dynamic-insert="true">
+
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+
+		<property name="img" type="java.lang.String"  >
+			<column name="IMG" length="70" />
+		</property>
+
+		<property name="iteminput" type="java.lang.String">
+			<column name="ITEMINPUT" length="200" />
+		</property>
+
+		<property name="maininput" type="java.lang.String">
+			<column name="MAININPUT" length="50" />
+		</property>
+
+		<property name="chenginput" type="java.lang.String">
+			<column name="CHENGINPUT" length="50" />
+		</property>
+
+		<property name="etype" type="java.lang.String">
+			<column name="ETYPE" length="30" />
+		</property>
+
+		<property name="address" type="java.lang.String">
+			<column name="ADDRESS" length="100" />
+		</property>
+
+		<property name="timeinputone" type="java.util.Date">
+			<column name="TIMEINPUTONE" />
+		</property>
+
+		<property name="timeinputtwo" type="java.util.Date">
+			<column name="TIMEINPUTTWO" />
+		</property>
+
+		<property name="lphone" type="java.lang.String">
+			<column name="LPHONE" length="20" />
+		</property>
+
+		<property name="eventwords" type="text">
+			<column name="EVENTWORDS" />
+		</property>
+
+		<property name="eventdetail" type="text">
+			<column name="EVENTDETAIL" />
+		</property>
+
+		<property name="eventwards" type="text">
+			<column name="EVENTWARDS" />
+		</property>
+
+		<property name="minpeo" type="java.lang.String">
+			<column name="MINPEO" length="30" />
+		</property>
+
+		<property name="money" type="java.lang.String">
+			<column name="MONEY" length="30"/>
+		</property>
+
+		<property name="costre" type="text">
+			<column name="COSTRE" />
+		</property>
+
+		<property name="username" type="java.lang.String">
+			<column name="USERNAME" length="50" />
+		</property>
+
+		<property name="city" type="java.lang.String">
+			<column name="CITY" length="50" />
+		</property>
+
+		<property name="longitude" type="java.lang.Double">
+			<column name="LONGITUDE" length="20" />
+		</property>
+
+		<property name="latitude" type="java.lang.Double">
+			<column name="LATITUDE" length="20" />
+		</property>
+		
+		<property name="code" type="java.lang.String">
+			<column name="CODE" length="10" />
+		</property>
+
+		<property name="pass" type="java.lang.Integer">
+			<column name="PASS" default="0" />
+		</property>
+
+		<property name="joinnumber" type="java.lang.Integer">
+			<column name="JOINNUMBER" default="0" />
+		</property>
+
+		<property name="event_state" type="java.lang.Integer">
+			<column name="EVENT_STATE" default="0" />
+		</property>
+	</class>
+</hibernate-mapping>

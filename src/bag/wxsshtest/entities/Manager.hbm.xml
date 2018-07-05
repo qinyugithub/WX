@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="bag.wxsshtest.entities.Manager" table="MANAGER"
+		dynamic-update="true" dynamic-insert="true">
+
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+
+		<property name="roll_username" type="java.lang.String">
+			<column name="ROLL_USERNAME" length="50" />
+		</property>
+
+		<property name="phone_numb" type="java.lang.String">
+			<column name="PHONE_NUMB" length="20" />
+		</property>
+
+		<property name="email" type="java.lang.String">
+			<column name="EMAIL" length="30" />
+		</property>
+
+		<property name="r_type" type="java.lang.String">
+			<column name="R_TYPE" length="50" />
+		</property>
+
+
+		<property name="type_name" type="java.lang.String">
+			<column name="TYPE_NAME" length="50" />
+		</property>
+
+		<property name="type_address" type="java.lang.String">
+			<column name="TYPE_ADDRESS" length="100" />
+		</property>
+
+		<property name="passwords" type="java.lang.String">
+			<column name="PASSWORDS" length="50" />
+		</property>
+
+		<property name="code" type="java.lang.String">
+			<column name="CODE" length="6" />
+		</property>
+
+		<property name="codecreatetime" type="java.util.Date">
+			<column name="CODECREATETIME" />
+		</property>
+
+		<property name="denglutai" type="java.lang.String">
+			<column name="DENGLUTAI" length="6" />
+		</property>
+
+		<property name="type_major" type="java.lang.String">
+			<column name="TYPE_MAJOR" length="30" />
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<!-- 定义新的拦截器栈, 配置 prepare 拦截器栈的 alwaysInvokePrepare 参数值为 false -->
+
+		<interceptors>
+			<interceptor-stack name="wxsshstack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+
+
+		<!-- 使用新的拦截器栈 -->
+		<default-interceptor-ref name="wxsshstack"></default-interceptor-ref>
+
+
+		<!-- 文件上传 -->
+		<action name="upload" class="fileUpload" method="fileupload">
+		</action>
+
+
+
+		<action name="savearticle" class="fileUpload" method="savearticle">
+			<result name="success">/WEB-INF/views/uploadsuccess.jsp</result>
+		</action>
+
+		<!-- 酒吧请求 -->
+		<action name="bar-*" class="barAction" method="{1}">
+		</action>
+
+		<!-- 广告请求 -->
+		<action name="advertise-*" class="advertiseAction" method="{1}">
+		</action>
+
+		<!-- 大活动请求 -->
+		<action name="activity-*" class="activityAction" method="{1}">
+			<result name="hotok">/WEB-INF/views/uploadsuccess.jsp</result>
+			<result name="list">/WEB-INF/views/activity.jsp</result>
+			<result name="listpass">/WEB-INF/views/pass.jsp</result>
+			<result name="listnotpass">/WEB-INF/views/notpass.jsp</result>
+			
+			<result name="activitys">/WEB-INF/views/hotactivity.jsp</result>
+			<result name="writeok">/WEB-INF/views/uploadsuccess.jsp</result>
+
+			<result name="finish" type="redirect">/activity-checkactivity?pass=0
+			</result>
+
+			<result name="passnotpass" type="redirect">/activity-checkactivity?pass=1
+			</result>
+			<result name="notpasspass" type="redirect">/activity-checkactivity?pass=-1
+			</result>
+		</action>
+		<!-- 报名者请求 -->
+		<action name="user-*" class="userAction" method="{1}">
+		</action>
+
+		<!-- 管理员请求 -->
+		<action name="manager-*" class="managerAction" method="{1}">
+		</action>
+
+		<!-- 论坛请求 -->
+		<action name="forum-*" class="forumAction" method="{1}">
+		</action>
+		
+		<!-- 系统管理员请求 -->
+		<action name="adm-*" class="admAction" method="{1}">
+			<result name="yes">/WEB-INF/views/adm.jsp</result>
+			<result name="no" type="redirect">index.jsp</result>
+		</action>
+	</package>
+
+</struts>

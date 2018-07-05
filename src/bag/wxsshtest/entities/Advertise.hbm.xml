@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="bag.wxsshtest.entities.Advertise" table="ADVERTISE" dynamic-update="true" dynamic-insert="true" >
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+      
+        <property name="pic" type="java.lang.String">
+            <column name="PIC" length="70" />
+        </property>
+        
+           <property name="evenitem" type="java.lang.String">
+            <column name="EVENITEM" length="100" />
+        </property>
+        
+           <property name="sponsor" type="java.lang.String">
+            <column name="SPONSOR" length="100" />
+        </property>
+        
+           <property name="etype" type="java.lang.String">
+            <column name="ETYPE" length="50" />
+        </property>
+        
+           <property name="cost" type="java.lang.String">
+            <column name="COST" length="30" />
+        </property>
+        
+           <property name="bartime" type="java.util.Date">
+            <column name="BARTIME" />
+        </property>
+        
+           <property name="bartime2" type="java.util.Date">
+            <column name="BARTIME2" />
+        </property>
+        
+           <property name="contact" type="java.lang.String">
+            <column name="CONTACT" length="20" />
+        </property>
+        
+           <property name="introduce" type="text">
+            <column name="INTRODUCE" />
+        </property>
+        
+           <property name="username" type="java.lang.String">
+            <column name="USERNAME" length="50" />
+        </property>
+        
+           <property name="city" type="java.lang.String">
+            <column name="CITY" length="50"/>
+        </property>
+        
+           <property name="event_state" type="java.lang.String">
+            <column name="EVENT_STATE" length="10" default="0" />
+        </property>
+        
+           <property name="eventkey" type="java.lang.Boolean">
+            <column name="EVENT_KEY" default="0" />
+        </property>
+        
+    </class>
+</hibernate-mapping>
